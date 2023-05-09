@@ -1,42 +1,51 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
   padding: 2rem;
+  box-sizing: border-box;;
   text-align: center;
+  background: #333;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.card{
+  position: relative;
+  /* transition: all 0.1s linear; */
+  transform: translate(var(--translateX), var(--translateY)) rotateX(var(--rotateY)) rotateY(var(--rotateX)) scale(var(--scale));
+  will-change: transform;
+  transition: all 2s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-cont{
+  width: 162px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+img{
+  margin-left: -19px;
 }
 
-.card {
-  padding: 2em;
+.card_glare{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index: 2;
+  transform: translateZ(1.41px);
+  overflow: hidden;
+  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90% );
+  opacity: var(--card-opacity);
+  mix-blend-mode: overlay;
+  transition: all 2s;
+  will-change: transform, opacity;
 }
 
-.read-the-docs {
-  color: #888;
+.card.interacting{
+  transition: none;
+}
+
+.card.interacting .card_glare{
+  transition: none;
 }
