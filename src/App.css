@@ -5,47 +5,8 @@
   width: 100%;
   min-height: 100vh;
   padding: 2rem;
-  box-sizing: border-box;;
+  box-sizing: border-box;
+  ;
   text-align: center;
   background: #333;
-}
-
-.card{
-  position: relative;
-  /* transition: all 0.1s linear; */
-  transform: translate(var(--translateX), var(--translateY)) rotateX(var(--rotateY)) rotateY(var(--rotateX)) scale(var(--scale));
-  will-change: transform;
-  transition: all 2s;
-}
-
-.img-cont{
-  width: 162px;
-}
-
-img{
-  margin-left: -19px;
-}
-
-.card_glare{
-  position: absolute;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  z-index: 2;
-  transform: translateZ(1.41px);
-  overflow: hidden;
-  background-image: radial-gradient( farthest-corner circle at var(--pointer-x) var(--pointer-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90% );
-  opacity: var(--card-opacity);
-  mix-blend-mode: overlay;
-  transition: all 2s;
-  will-change: transform, opacity;
-}
-
-.card.interacting{
-  transition: none;
-}
-
-.card.interacting .card_glare{
-  transition: none;
 }
